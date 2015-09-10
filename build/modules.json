@@ -1,0 +1,6 @@
+{
+  "assist.js": "/node_modules/assist.js/dist/amd",
+  "lscache": "/node_modules/lscache/lscache",
+  "proclaim": "/node_modules/proclaim/lib/proclaim",
+  "sinon": "/node_modules/sinon/pkg/sinon"
+}
