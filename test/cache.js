@@ -115,6 +115,18 @@ describe('cache.js', function () {
     assert.lessThanOrEqual(expires, date2);
   });
 
+  it.only('Should return all bucket data.', function () {
+    var cache = new Cache({ bucket: 'b1', namespace: 'ns1' });
+
+    cache.set('k1', 'v1');
+    cache.set('k2', 'v2');
+
+    assert.deepEqual(cache.all(), {
+      'k1': 'v1',
+      'k2': 'v2'
+    });
+  });
+
 });
 
 

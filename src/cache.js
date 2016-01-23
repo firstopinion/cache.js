@@ -61,6 +61,16 @@ Cache.prototype.flushExpired = function () {
   return lscache.flushExpired.apply(lscache, arguments);
 };
 
+Cache.prototype.all = function () {
+  var data = {};
+
+  lscache.setBucket(this.bucketId());
+  lscache._eachKey(function(key, exprKey) {
+    data[key] = lscache._getItem(key);
+  });
+
+  return data;
+};
 
 /* -----------------------------------------------------------------------------
  * expose
